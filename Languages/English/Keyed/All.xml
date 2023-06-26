@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	
+	<ExtraFunctions.Designator_SetFaction.DefaultLabel>Set faction: {0}</ExtraFunctions.Designator_SetFaction.DefaultLabel>
+	<ExtraFunctions.Designator_SetFaction.DefaultDesc>Choose a faction and items to change the owner's faction.</ExtraFunctions.Designator_SetFaction.DefaultDesc>
+	<ExtraFunctions.None>None</ExtraFunctions.None>
+	<ExtraFunctions.SelectedFaction>Selected Faction: {0}</ExtraFunctions.SelectedFaction>
+	
+	<ExtraFunctions.Designator_BuildExtraProps.DefaultDesc>Build a building, after setting a faction.
+	
+{0}</ExtraFunctions.Designator_BuildExtraProps.DefaultDesc>
+
+	<ExtraFunctions.Designator_SpawnPawn.DefaultDesc>Select pawn faction by right click. Spawn pawn by PawnKindDef.
+	
+{0}</ExtraFunctions.Designator_SpawnPawn.DefaultDesc>
+	<ExtraFunctions.SetFaction>Set Faction</ExtraFunctions.SetFaction>
+	<ExtraFunctions.SetSleep>Set sleep</ExtraFunctions.SetSleep>
+	<ExtraFunctions.SleepNow>Sleep: {0}</ExtraFunctions.SleepNow>
+	
+	<ExtraFunctions.Yes>Yes</ExtraFunctions.Yes>
+	<ExtraFunctions.No>No</ExtraFunctions.No>
+	
+	<ExtraFunctions.Designator_MakeThing.DefaultDesc>Select thing, select stuff, select quality. Spawn thing.
+	
+{0}</ExtraFunctions.Designator_MakeThing.DefaultDesc>
+	<ExtraFunctions.SelectedStuff>Selected stuff: {0}</ExtraFunctions.SelectedStuff>
+	<ExtraFunctions.Default>Default</ExtraFunctions.Default>
+	<ExtraFunctions.SelectedQualityCategory>Selected quality: {0}</ExtraFunctions.SelectedQualityCategory>
+	<ExtraFunctions.SelectedStuff>Selected stuff</ExtraFunctions.SelectedStuff>
+	<ExtraFunctions.SetStuff>Set stuff</ExtraFunctions.SetStuff>
+	<ExtraFunctions.SetThingDef>Set thing</ExtraFunctions.SetThingDef>
+	<ExtraFunctions.SetApparel>Set apparel</ExtraFunctions.SetApparel>
+	<ExtraFunctions.SetWeapon>Set weapon</ExtraFunctions.SetWeapon>
+	
+	<ExtraFunctions.Designator_MakeFog.DefaultLabel>Set fog</ExtraFunctions.Designator_MakeFog.DefaultLabel>
+	<ExtraFunctions.Designator_MakeFog.DefaultDesc>Make or remove fog from cells.
+	
+{0}</ExtraFunctions.Designator_MakeFog.DefaultDesc>
+	<ExtraFunctions.FogMode>Fog mode: {0}</ExtraFunctions.FogMode>
+	<ExtraFunctions.MakeFog>Make fog</ExtraFunctions.MakeFog>
+	<ExtraFunctions.RemoveFog>Remove fog</ExtraFunctions.RemoveFog>
+	<ExtraFunctions.SetFogMode>Set fog mode</ExtraFunctions.SetFogMode>
+	
+</LanguageData>

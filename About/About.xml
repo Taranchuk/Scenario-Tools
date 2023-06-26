@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Scenario Tools</name>
+	<author>DimonSever000</author>
+	<description>Desc</description>
+	<packageId>DimonSever000.ScenarioTools.Specific</packageId>
+	<supportedVersions>
+	<li>1.4</li>
+	</supportedVersions>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>https://github.com/pardeike/HarmonyRimWorld</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+</ModMetaData> 

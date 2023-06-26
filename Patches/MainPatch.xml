@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- You need add this block to the patch:
+	
+	<li Class="PatchOperationAddModExtension">
+		<xpath>*/ThingDef[defName="AncientEnemyTerminal"]</xpath>
+		<value>
+			<li Class="ExtraFunctions.DefModExtension_AddThingToPanel">
+			</li>
+		</value>
+	</li>
+	
+	Important!
+	If you're adding a new ThingDef, then it must be a building. I haven't tested whether it works on a non-building thing. 
+	If you want to add pawn make sure to use PawnKindDef and not ThingDef for pawn.
+	
+	ThingDef and PawnKindDef have defName. You defNames for patch.
+	
+	-->
+	<Operation Class="PatchOperationSequence">
+		<success>Normal</success>
+		<operations>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>*/ThingDef[defName="AncientEnemyTerminal"]</xpath>
+				<value>
+					<li Class="ExtraFunctions.DefModExtension_AddThingToPanel">
+					</li>
+				</value>
+			</li>
+			<li Class="PatchOperationAddModExtension">
+				<xpath>*/PawnKindDef[@Name="MechCentipedeBase"]</xpath>
+				<value>
+					<li Class="ExtraFunctions.DefModExtension_AddThingToPanel">
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

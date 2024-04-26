@@ -451,5 +451,54 @@ namespace ExtraFunctions
                 }
             }
         }
+
+        [DebugAction("Scenario Tools", "Make gears biocoded", false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void MakeGearsBiocoded()
+        {
+            var pawn = Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>().FirstOrDefault(x => x.RaceProps.Humanlike);
+            var gears = pawn.equipment.AllEquipmentListForReading
+            .Concat(pawn.apparel.WornApparel).Concat(pawn.inventory.innerContainer).ToList();
+            var floatMenu = new List<FloatMenuOption>();
+            foreach (var gear in gears)
+            {
+                var biocodable = gear.TryGetComp<CompBiocodable>();
+                if (biocodable != null && biocodable.CodedPawn != pawn)
+                {
+                    floatMenu.Add(new FloatMenuOption(gear.LabelCap, delegate
+                    {
+                        biocodable.CodeFor(pawn);
+                    }));
+                }
+            }
+            if (floatMenu.Any())
+            {
+                Find.WindowStack.Add(new FloatMenu(floatMenu));
+            }
+        }
+
+        [DebugAction("Scenario Tools", "Make gears biocoded (rect)", false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+        private static void MakeGearsBiocodedRect()
+        {
+            DebugToolsGeneral.GenericRectTool("Make room", delegate (CellRect rect)
+            {
+                foreach (var cell in rect.Cells)
+                {
+                    var pawns = cell.GetThingList(Find.CurrentMap).OfType<Pawn>().Where(x => x.RaceProps.Humanlike).ToList();
+                    foreach (var pawn in pawns)
+                    {
+                        var gears = pawn.equipment.AllEquipmentListForReading
+                        .Concat(pawn.apparel.WornApparel).Concat(pawn.inventory.innerContainer).ToList();
+                        foreach (var gear in gears)
+                        {
+                            var biocodable = gear.TryGetComp<CompBiocodable>();
+                            if (biocodable != null && biocodable.CodedPawn != pawn)
+                            {
+                                biocodable.CodeFor(pawn);
+                            }
+                        }
+                    }
+                }
+            });
+        }
     }
 }

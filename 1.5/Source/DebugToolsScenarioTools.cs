@@ -12,6 +12,7 @@ using System.Collections;
 using Microsoft.SqlServer.Server;
 using System.Security.Cryptography;
 using static HarmonyLib.Code;
+using LudeonTK;
 
 namespace ExtraFunctions
 {
@@ -144,9 +145,9 @@ namespace ExtraFunctions
                                     {
                                         thing.HitPoints = thing.MaxHitPoints;
                                     }
-                                    Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlag.Buildings);
-                                    Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlag.Things);
-                                    Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlag.BuildingsDamage);
+                                    Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlagDefOf.Buildings);
+                                    Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlagDefOf.Things);
+                                    Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlagDefOf.BuildingsDamage);
                                 }
                             }
                         }
@@ -245,7 +246,8 @@ namespace ExtraFunctions
                         if (Current.ProgramState == ProgramState.Playing)
                         {
                             Find.CurrentMap.roofGrid.Drawer.SetDirty();
-                            Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlag.Things | MapMeshFlag.FogOfWar);
+                            Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlagDefOf.Things);
+                            Find.CurrentMap.mapDrawer.MapMeshDirty(cell, MapMeshFlagDefOf.FogOfWar);
                         }
                     }
                 }
@@ -393,7 +395,7 @@ namespace ExtraFunctions
             });
         }
 
-        [DebugAction("Scenario Tools", "Set faction (rect)", false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 100)]
+        [DebugAction("Scenario Tools", "Set faction (rect)", false, false, false, false, 0, false, actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap, displayPriority = 100)]
         private static void SetFactionRect()
         {
             List<FloatMenuOption> list = new List<FloatMenuOption>();
